@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "npm run prepare-model",
     "build": "vite build",
+    "prebuild": "npm run prepare-model",
+    "prepare-model": "node scripts/download-model.mjs",
     "lint": "eslint . --max-warnings=0",
     "test": "vitest run"
   },
