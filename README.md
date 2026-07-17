@@ -66,6 +66,8 @@ yarn build
 
 `.github/workflows/deploy.yml` はGitHub Pages公式Actionsを使います。リポジトリの Settings → Pages で Source を GitHub Actions に設定してください。Viteのbaseは `/chromebook-yolo-object-detector-ja/` です。
 
+このリポジトリには現時点で lockfile がないため、デプロイワークフローは `npm install` で依存関係を解決してから `npm run build` を実行します。GitHub Pages の Source を `Deploy from a branch` にすると、Vite のビルド成果物ではなくソース側の `index.html` が配信される可能性があります。公開URLで画面が真っ白な場合は、Actions の `Deploy to GitHub Pages` が成功していることと、Pages Source が `GitHub Actions` になっていることを確認してください。
+
 ## 制約・既知の問題
 
 - AI検出には誤検出・見逃しがあります。
